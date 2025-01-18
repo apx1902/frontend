@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import Header from '../../components/Header/Header'
-import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
-import FoodCard from '../../components/FoodCard/FoodCard';
-import Appdownload from '../../components/AppDownload/Appdownload';
+// import Header from '../components/Header'
+import ExploreMenu from '../components/ExploreMenu'
+import FoodCard from '../components/FoodCard';
+import Appdownload from '../components/Appdownload';
+import Header from '../components/Header';
 
 const Home = () => {
 
