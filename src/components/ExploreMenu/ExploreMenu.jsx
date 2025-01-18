@@ -4,7 +4,7 @@ import { menu_list } from '../../assets/assets'
 const ExploreMenu = ({ category, setCategory }) => {
     return (
         <div className='flex flex-col gap-5' id='explore-menu'>
-            <h1 className='text-[#262626 text-3xl font-medium '>Explore our menu</h1>
+            <h1 className='text-[#262626] text-3xl font-medium'>Explore our menu</h1>
             <p className='max-w-[60%] text-[#808080]'>Choose from a diverse menu featuring a delectable array of delicious dishescrafted with the finest ingredients that are sure to satisfy your cravings and leave you craving for more.</p>
             <div className="flex justify-between items-center gap-8 text-center my-5 overflow-x-scroll scrollbar-hide">
                 {menu_list.map((item, index) => {
