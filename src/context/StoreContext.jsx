@@ -10,13 +10,24 @@ const StoreContextProvider = (props) => {
     const addToCart = (itemId) => { //function when user inserts the item for the first time in the cart
         if (!cartItems[itemId]) {//if we dont get an item in the cart
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-        }else{
-            setCartItems((prev) => ({...prev,[itemId]:prev[itemId]+1}))
+        } else {
+            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
         }
     }
 
     const removeFromCart = (itemId) => {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    }
+
+    const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
+                let itemInfo = food_list.find((product) => product.fid === item); //means this product is available in the cart
+                totalAmount += itemInfo.price * cartItems[item];
+            }
+        }
+        return totalAmount;
     }
 
     const contextValue = {
@@ -24,7 +35,8 @@ const StoreContextProvider = (props) => {
         cartItems,
         setCartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        getTotalCartAmount
     }
 
     return (
